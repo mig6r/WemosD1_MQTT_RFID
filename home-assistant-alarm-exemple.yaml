@@ -43,8 +43,7 @@ automation:
       service: script.turn_on
       entity_id: script.allume_alarme
       
-
-     
+  
   - alias: RFID_Alarm_On_Total
     trigger:
        - platform: mqtt
@@ -60,9 +59,7 @@ automation:
     action:
        - service: script.turn_on
          entity_id: script.allume_alarme_away
-       
-     
-     
+          
           
   - alias: RFID_Alarm_off_general
     trigger:
@@ -92,29 +89,7 @@ automation:
           message: "RFID -> Alarm off!"
       - service: script.turn_on
         entity_id: script.arret_alarme
-        
-    
-    
-    
-    
-  - alias: RFID_Alarm_Garage_off
-    trigger:
-      platform: mqtt
-      topic: "home/rfid"
-    condition:
-      condition: and
-      conditions:
-        - condition: template
-          value_template: '{{ trigger.payload == "666cc11f"}}'
-        - condition: or
-          conditions:
-            - condition: state
-              entity_id: alarm_control_panel.home_alarm
-              state: armed_home
-     
-    action:
-      - service: script.turn_on
-        entity_id: script.arret_alarme
+
 
 
 
