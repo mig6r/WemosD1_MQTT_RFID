@@ -11,6 +11,9 @@
 * Screws
 * 3D printer
 
+## Diagram
+
+<img src="images/cablage.jpg">
 
 ## Copyright
 
